@@ -9,7 +9,7 @@ namespace CompositeCommandModule.ViewModels
     {
         public TabViewModel(IApplicationCommand applicationCommand)
         {
-            SaveCommand = new DelegateCommand(Execute).ObservesProperty(() => CanUpdate);
+            SaveCommand = new DelegateCommand(Execute).ObservesCanExecute(() => CanUpdate);
             applicationCommand.SaveAllCommand.RegisterCommand(SaveCommand);
         }
 
@@ -24,7 +24,11 @@ namespace CompositeCommandModule.ViewModels
         public bool CanUpdate
         {
             get { return canUpdate; }
-            set { SetProperty(ref canUpdate, value); }
+            set
+            {
+                SetProperty(ref canUpdate, value);
+                SaveCommand.RaiseCanExecuteChanged();
+            }
         }
 
         public DelegateCommand SaveCommand { get; set; }

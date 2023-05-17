@@ -3,7 +3,10 @@
         xmlns:prism="http://prismlibrary.com/"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         prism:ViewModelLocator.AutoWireViewModel="True"
-        Title="{Binding Title}" Height="350" Width="525" >
+        Title="{Binding Title}"
+        Height="350"
+        Width="525"
+        WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
         <Style TargetType="TabItem">
@@ -21,8 +24,9 @@
         <Button Grid.Row="0"
                 Content="Save All"
                 Margin="10"
-                Command="{Binding ApplicationCommand.SaveAllCommand}"/>
-        <TabControl Grid.Row="1" 
+                Command="{Binding ApplicationCommand.SaveAllCommand}" />
+
+        <TabControl Grid.Row="1"
                     Margin="10"
                     prism:RegionManager.RegionName="ContentRegion" />
     </Grid>

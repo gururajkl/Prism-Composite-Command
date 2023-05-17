@@ -22,7 +22,7 @@ namespace CompositeCommandModule
             region.Add(tabB);
 
             var tabC = containerProvider.Resolve<TabView>();
-            SetTitle(tabC, "TAB C");
+            SetTitle(tabC, "Tab C");
             region.Add(tabC);
         }
 

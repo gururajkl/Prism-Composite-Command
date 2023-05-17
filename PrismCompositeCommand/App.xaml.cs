@@ -16,7 +16,7 @@ namespace PrismCompositeCommand
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.Register<IApplicationCommand, ApplicationCommand>();
+            containerRegistry.RegisterSingleton<IApplicationCommand, ApplicationCommand>();
         }
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
