@@ -1,4 +1,4 @@
-﻿using CompositeCommands.Core.Abstractions;
+﻿using CompositeCommands.Core.Commands;
 using Prism.Commands;
 using Prism.Mvvm;
 using System;
@@ -9,7 +9,7 @@ namespace CompositeCommandModule.ViewModels
     {
         public TabViewModel(IApplicationCommand applicationCommand)
         {
-            SaveCommand = new DelegateCommand(Execute).ObservesCanExecute(() => CanUpdate);
+            SaveCommand = new DelegateCommand(Execute).ObservesProperty(() => CanUpdate);
             applicationCommand.SaveAllCommand.RegisterCommand(SaveCommand);
         }
 
@@ -27,7 +27,7 @@ namespace CompositeCommandModule.ViewModels
             set { SetProperty(ref canUpdate, value); }
         }
 
-        public DelegateCommand SaveCommand { get; private set; }
+        public DelegateCommand SaveCommand { get; set; }
 
         public void Execute()
         {

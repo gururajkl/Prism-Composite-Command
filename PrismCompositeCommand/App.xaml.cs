@@ -1,5 +1,4 @@
 ﻿using CompositeCommandModule;
-using CompositeCommands.Core.Abstractions;
 using CompositeCommands.Core.Commands;
 using Prism.Ioc;
 using Prism.Modularity;

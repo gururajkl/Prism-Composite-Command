@@ -1,4 +1,4 @@
-﻿using CompositeCommands.Core.Abstractions;
+﻿using CompositeCommands.Core.Commands;
 using Prism.Mvvm;
 
 namespace PrismCompositeCommand.ViewModels
