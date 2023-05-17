@@ -19,11 +19,11 @@ namespace CompositeCommandModule
 
             var tabB = containerProvider.Resolve<TabView>();
             SetTitle(tabB, "Tab B");
-            region.Add(tabB);   
+            region.Add(tabB);
 
             var tabC = containerProvider.Resolve<TabView>();
             SetTitle(tabC, "TAB C");
-            region.Add(tabC);   
+            region.Add(tabC);
         }
 
         private static void SetTitle(TabView tab, string title)

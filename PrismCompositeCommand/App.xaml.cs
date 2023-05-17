@@ -1,4 +1,6 @@
 ﻿using CompositeCommandModule;
+using CompositeCommands.Core.Abstractions;
+using CompositeCommands.Core.Commands;
 using Prism.Ioc;
 using Prism.Modularity;
 using PrismCompositeCommand.Views;
@@ -6,9 +8,6 @@ using System.Windows;
 
 namespace PrismCompositeCommand
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
     public partial class App
     {
         protected override Window CreateShell()
@@ -18,7 +17,7 @@ namespace PrismCompositeCommand
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-
+            containerRegistry.Register<IApplicationCommand, ApplicationCommand>();
         }
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
